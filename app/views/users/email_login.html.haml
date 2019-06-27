@@ -1,0 +1,5 @@
+%h2 Login
+= form_tag users_send_token_path do
+  = label_tag :email
+  = email_field_tag :email
+  = submit_tag "Login"

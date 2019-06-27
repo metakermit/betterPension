@@ -1,0 +1,9 @@
+.header
+  .left
+    - if current_user
+      = current_user.company
+      = link_to "Dashboard", company_url if current_user.admin?
+      = link_to "Insurance", insurance_url
+  .right
+    - if current_user
+      = link_to "Log Out", logout_url, method: :post

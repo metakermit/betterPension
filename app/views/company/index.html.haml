@@ -1,0 +1,15 @@
+%h2 Company #{@company}
+
+%h3 Users
+
+%table
+  - @company.users.each do |user|
+    %tr
+      %td= user.email
+      %td= user.status
+
+%h3 Invite User
+= form_tag company_invite_user_path do
+  = label_tag :email
+  = email_field_tag :email
+  = submit_tag "Invite"
